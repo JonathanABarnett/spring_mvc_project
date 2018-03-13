@@ -40,6 +40,14 @@ public class UserService {
         return userRepository.findOne(email);
     }
 
+    public List<User> findAll() {
+        return userRepository.findAll();
+    }
+
+    public List<User> findByName(String name) {
+        return userRepository.findByNameLike("%" + name + "%");
+    }
+
     public boolean doesUserExist(String email) {
         User user = userRepository.findOne(email);
         if (user != null) {
