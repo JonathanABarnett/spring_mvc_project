@@ -39,4 +39,12 @@ public class UserService {
     public User findOne(String email) {
         return userRepository.findOne(email);
     }
+
+    public boolean doesUserExist(String email) {
+        User user = userRepository.findOne(email);
+        if (user != null) {
+            return true;
+        }
+        return false;
+    }
 }

@@ -15,12 +15,12 @@ public class User {
 
     @Id
     @Email
-    @NotEmpty
+    @NotEmpty(message = "Please enter a valid email address")
     @Column(unique = true)
     private String email;
-    @NotEmpty
+    @NotEmpty(message = "Please enter your full name")
     private String name;
-    @Size(min = 4)
+    @Size(min = 4, message = "Password must be greater than 4 characters")
     private String password;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL) // mappedBy name must be the same as what is listed in Task
                                                              // OneToMany is owned by User
