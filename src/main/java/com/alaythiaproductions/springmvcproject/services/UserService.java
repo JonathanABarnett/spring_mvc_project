@@ -37,6 +37,6 @@ public class UserService {
     }
 
     public User findOne(String email) {
-        return null;
+        return userRepository.findOne(email);
     }
 }

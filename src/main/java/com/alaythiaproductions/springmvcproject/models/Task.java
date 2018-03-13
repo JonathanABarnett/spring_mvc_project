@@ -1,7 +1,9 @@
 package com.alaythiaproductions.springmvcproject.models;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
+//import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Task {
