@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragment :: head"></head>
+
+<body>
+
+<nav th:replace="fragment :: nav"></nav>
+<div class="container mySpace">
+    <div class="jumbotron">
+        <h1 class="text text-center">Error</h1>
+        <div class="text text-center">
+            You've encountered an error:
+            <h3 th:text="${message}"></h3> <h3 th:text="${status}" class="text text-danger"></h3>
+        </div>
+        <div>
+            Please don't cry and whine about it.
+        </div>
+    </div>
+</div>
+<footer th:replace="fragment :: footer"></footer>
+</body>
+</html>
