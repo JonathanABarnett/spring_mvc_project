@@ -11,13 +11,13 @@ public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotEmpty
+    @NotEmpty(message = "Please select a date")
     private String date;
-    @NotEmpty
+    @NotEmpty(message = "Please select a Start Time")
     private String startTime;
-    @NotEmpty
+    @NotEmpty(message = "Please select a Stop Time")
     private String stopTime;
-    @NotEmpty
+    @NotEmpty(message = "Please enter a description of the task")
     private String description;
     @ManyToOne
     @JoinColumn(name = "USER_EMAIL") // Will correspond with User Email (being used as ID)
