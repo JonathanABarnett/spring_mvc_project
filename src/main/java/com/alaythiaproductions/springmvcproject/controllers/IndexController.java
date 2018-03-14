@@ -12,4 +12,10 @@ public class IndexController {
         model.addAttribute("title", "MVC Home");
         return "index";
     }
+
+    @RequestMapping(value = "/login")
+    public String showLoginPage(Model model) {
+        model.addAttribute("title", "Login");
+        return "views/loginForm";
+    }
 }

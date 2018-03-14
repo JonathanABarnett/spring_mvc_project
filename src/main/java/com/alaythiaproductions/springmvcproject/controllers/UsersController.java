@@ -16,6 +16,7 @@ public class UsersController {
     @GetMapping(value = "/users")
     public String listUsers(Model model, @RequestParam(defaultValue = "") String name){
         model.addAttribute("users", userService.findByName(name));
+        model.addAttribute("title", "Users");
         return "views/list";
     }
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:fragment="head">
     <meta charset="UTF-8"/>
     <title th:text="${title}">Title of Page</title>
@@ -22,32 +22,32 @@
     <div class="collapse navbar-collapse" id="navbarColor01" th:fragment="nav">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="/index">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/index">Home</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" sec:authorize="!isAuthenticated()">
                 <a class="nav-link" href="/register">Register</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Login</a>
+            <li class="nav-item" sec:authorize="!isAuthenticated()">
+                <a class="nav-link" href="/login">Login</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" sec:authorize="isAuthenticated()">
                 <a class="nav-link" href="/profile">Profile</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" sec:authorize="hasRole('ROLE_ADMIN')">
                 <a class="nav-link" href="/users">Users</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="/">About</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <form class="form-inline my-2 my-lg-0" th:action="@{/logout}" method="post" sec:authorize="isAuthenticated()">
             <input class="form-control mr-sm-2" type="hidden" />
             <button class="btn btn-secondary my-2 my-sm-0" type="submit">Logout</button>
         </form>
     </div>
 </nav>
 
-<footer class="text text-center" th:fragment="footer">
+<footer class="footer text text-center" th:fragment="footer">
 <p>&copy; 2018 AlaythiaProductions</p>
 </footer>
 

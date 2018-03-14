@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:replace="fragment :: head"></head>
 
 <body>
@@ -7,12 +7,12 @@
 <nav th:replace="fragment :: nav"></nav>
 <div class="container mySpace">
     <div class="jumbotron">
-        <form action="/users" class="form-inline">
+      <!--  <form action="/users" class="form-inline">
             <div class="form-group mb-2">
                 <input type="text" class="form-control" name="name" placeholder="Search User"/>
                 <button class="btn btn-primary" type="submit" style="margin-left: 10px">Search</button>
             </div>
-        </form>
+        </form> -->
         <div class="card">
             <div class="card card-body">
                 <table class="table table-hover">
